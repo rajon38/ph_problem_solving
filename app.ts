@@ -114,3 +114,31 @@ const fibonacci = (n: number): number[] => {
 const fibonacciCount = 10;
 const fibonacciSequence = fibonacci(fibonacciCount);
 console.log(`First ${fibonacciCount} Fibonacci numbers:`, fibonacciSequence);
+
+
+const findMin = (arr: number[]): number => {
+    let min = arr[0];
+    for (let num of arr) {
+        if (num < min) {
+            min = num;
+        }
+    }
+    return min;
+}
+
+const numbersForMin = [3, 1, 4, 1, 5, 9];
+const minNumber = findMin(numbersForMin);
+console.log("Minimum number:", minNumber);
+
+
+const multiplicationTable = (n: number): string[] => {
+    let result = [];
+    for (let i = 1; i <= 10; i++) {
+        result.push(`${n} x ${i} = ${n * i}`);
+    }
+    return result;
+};
+
+const tableSize = 5;
+const multiplicationTableResult = multiplicationTable(tableSize);
+console.log(`Multiplication Table of size ${tableSize}:\n`, multiplicationTableResult.join('\n'));
