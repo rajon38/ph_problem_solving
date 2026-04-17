@@ -142,3 +142,48 @@ const multiplicationTable = (n: number): string[] => {
 const tableSize = 5;
 const multiplicationTableResult = multiplicationTable(tableSize);
 console.log(`Multiplication Table of size ${tableSize}:\n`, multiplicationTableResult.join('\n'));
+
+
+const isPrime = (n: number): boolean => {
+    if (n <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+
+const primeNumber = 18;
+const primeResult = isPrime(primeNumber);
+console.log(`${primeNumber} is prime:`, primeResult);
+
+
+const removeDuplicates = (arr: number[]): number[] => {
+    return Array.from(new Set(arr));
+}
+
+const numbersWithDuplicates = [1, 2, 3, 2, 4, 1, 5];
+const uniqueNumbers = removeDuplicates(numbersWithDuplicates);
+console.log("Unique numbers:", uniqueNumbers);
+
+const celsiusToFahrenheit = (celsius: number): number => {
+    return (celsius * 9/5) + 32;
+};
+
+const celsiusTemp = 25;
+const fahrenheitTemp = celsiusToFahrenheit(celsiusTemp);
+console.log(`${celsiusTemp}°C is equal to ${fahrenheitTemp}°F`);
+
+const countChar = (s: string, char: string): number => {
+    let count = 0;
+    for (let c of s) {
+        if (c === char) {
+            count++;
+        }
+    }
+    return count;
+}
+
+const inputString = "hello world";
+const characterToCount = 'o';
+const charCount = countChar(inputString, characterToCount);
+console.log(`Character '${characterToCount}' occurs ${charCount} times in "${inputString}".`);
