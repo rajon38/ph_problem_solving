@@ -102,3 +102,15 @@ const evenNumbers = getEvenNumbers(mixedNumbers);
 console.log("Even numbers:", evenNumbers);
 
 
+const fibonacci = (n: number): number[] => {
+    if (n === 1) return [0];
+    let fib = [0, 1];
+    for (let i = 2; i < n; i++) {
+        fib.push(fib[i - 1] + fib[i - 2]);
+    }
+    return fib;
+};
+
+const fibonacciCount = 10;
+const fibonacciSequence = fibonacci(fibonacciCount);
+console.log(`First ${fibonacciCount} Fibonacci numbers:`, fibonacciSequence);
